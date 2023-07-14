@@ -1,44 +1,62 @@
-# OpenAI API Quickstart - Node.js example app
+# Username Generator
 
-This is an example pet name generator app used in the OpenAI API [quickstart tutorial](https://platform.openai.com/docs/quickstart). It uses the [Next.js](https://nextjs.org/) framework with [React](https://reactjs.org/). Check out the tutorial or follow the instructions below to get set up.
+This project is a simple username generator application built using Next.js and the OpenAI API.
 
-![Text box that says name my pet with an icon of a dog](https://user-images.githubusercontent.com/10623307/213887080-b2bc4645-7fdb-4dbd-ae42-efce00d0dc29.png)
+## Requirements
 
+- Node.js >= v16
 
-## Setup
+## Getting Started
 
-1. If you don’t have Node.js installed, [install it from here](https://nodejs.org/en/) (Node.js version >= 14.6.0 required)
+First, you will need to clone the project to your local machine. You can do this by running:
 
-2. Clone this repository
+git clone https://github.com/username/repository.git
 
-3. Navigate into the project directory
+javascript
+Copy code
 
-   ```bash
-   $ cd openai-quickstart-node
-   ```
+Please replace `username` and `repository` with your Github username and repository name respectively.
 
-4. Install the requirements
+Navigate to the project directory:
 
-   ```bash
-   $ npm install
-   ```
+```cd openai-quickstart-node```
 
-5. Make a copy of the example environment variables file
+Then, install the dependencies:
 
-   On Linux systems: 
-   ```bash
-   $ cp .env.example .env
-   ```
-   On Windows:
-   ```powershell
-   $ copy .env.example .env
-   ```
-6. Add your [API key](https://platform.openai.com/account/api-keys) to the newly created `.env` file
+```npm install```
 
-7. Run the app
+Before running the application, you will need to set your OpenAI API Key. You can set this as an environment variable:
 
-   ```bash
-   $ npm run dev
-   ```
+export OPENAI_API_KEY=your_api_key
 
-You should now be able to access the app at [http://localhost:3000](http://localhost:3000)! For the full context behind this example app, check out the [tutorial](https://platform.openai.com/docs/quickstart).
+Please replace `your_api_key` with your OpenAI API Key.
+
+## Development
+
+To start the development server, you can run:
+
+```npm run dev```
+
+The application will be available at `http://localhost:3000`.
+
+## Build
+
+To build the application for production, you can run:
+
+```npm run build```
+
+This will create a `.next` folder which contains the built application.
+
+## Start
+
+To start the application in production mode, you can run:
+
+```npm run start```
+
+You should have run `npm run build` before this command.
+
+The application will be available at `http://localhost:3000`.
+
+## License
+
+MIT
