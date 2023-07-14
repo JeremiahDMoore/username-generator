@@ -10,16 +10,11 @@ This project is a simple username generator application built using Next.js and 
 
 First, you will need to clone the project to your local machine. You can do this by running:
 
-git clone https://github.com/username/repository.git
-
-javascript
-Copy code
-
-Please replace `username` and `repository` with your Github username and repository name respectively.
+```git clone https://github.com/JeremiahDMoore/username-generator.git```
 
 Navigate to the project directory:
 
-```cd openai-quickstart-node```
+```cd username-generator```
 
 Then, install the dependencies:
 
@@ -27,7 +22,7 @@ Then, install the dependencies:
 
 Before running the application, you will need to set your OpenAI API Key. You can set this as an environment variable:
 
-export OPENAI_API_KEY=your_api_key
+```export OPENAI_API_KEY=your_api_key```
 
 Please replace `your_api_key` with your OpenAI API Key.
 
