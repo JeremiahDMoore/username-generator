@@ -49,8 +49,13 @@ export default async function (req, res) {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: generatePrompt(food, character, color),
-      temperature: 0.8,
+      temperature: 0.69,
       frequency_penalty: 0.69,
+      presence_penalty: 0.69,
+      top_p: 1,
+      stop: ["\n"],
+
+
     });
     res.status(200).json({ result: completion.data.choices[0].text });
   } catch(error) {
