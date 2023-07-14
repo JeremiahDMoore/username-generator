@@ -3,7 +3,10 @@ import { useState } from "react";
 import styles from "./index.module.css";
 
 export default function Home() {
-  const [animalInput, setAnimalInput] = useState("");
+  const [foodInput,setFoodInput] = useState("");
+  const [characterInput, setCharacterInput] = useState("");
+  const [colorInput, setColorInput] = useState("");
+
   const [result, setResult] = useState();
 
   async function onSubmit(event) {
@@ -14,7 +17,7 @@ export default function Home() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ animal: animalInput }),
+        body: JSON.stringify({ food: foodInput, character: characterInput, color: colorInput }),
       });
 
       const data = await response.json();
@@ -23,7 +26,10 @@ export default function Home() {
       }
 
       setResult(data.result);
-      setAnimalInput("");
+      // setCharacterInput("");
+      // setFoodInput("");
+      // setColorInput("");      
+
     } catch(error) {
       // Consider implementing your own error handling logic here
       console.error(error);
@@ -32,27 +38,45 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <div className={styles.site}>
       <Head>
-        <title>OpenAI Quickstart</title>
-        <link rel="icon" href="/dog.png" />
+        <title>Generate Username</title>
+        <link rel="icon" href="/mememan.png" />
       </Head>
 
       <main className={styles.main}>
-        <img src="/dog.png" className={styles.icon} />
-        <h3>Name my pet</h3>
+        <img src="/mememan.png" className={styles.icon} />
+        <h3>generate username</h3>
         <form onSubmit={onSubmit}>
           <input
             type="text"
             name="animal"
-            placeholder="Enter an animal"
-            value={animalInput}
-            onChange={(e) => setAnimalInput(e.target.value)}
+            placeholder="Enter a food"
+            value={foodInput}
+            onChange={(e) => setFoodInput(e.target.value)}
           />
-          <input type="submit" value="Generate names" />
+           <input
+            type="text"
+            name="character"
+            placeholder="Enter a character"
+            value={characterInput}
+            onChange={(e) => setCharacterInput(e.target.value)}
+          />
+          <input
+            type="text"
+            name="color"
+            placeholder="Enter a color"
+            value={colorInput}
+            onChange={(e) => setColorInput(e.target.value)}
+          />
+         
+          <input type="submit" value="Generate" />
         </form>
         <div className={styles.result}>{result}</div>
       </main>
+      <footer className={styles.footer}>
+        powered by <a href="https://openai.com/">OpenAI</a>
+      </footer>
     </div>
   );
 }
