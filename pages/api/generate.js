@@ -49,12 +49,9 @@ export default async function (req, res) {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: generatePrompt(food, character, color),
-      temperature: 0.69,
-      frequency_penalty: 0.69,
-      presence_penalty: 0.69,
-      top_p: 1,
-      stop: ["\n"],
-
+      temperature: 0.9,
+      frequency_penalty: 0.9,
+      // top_p: 0.9,
 
     });
     res.status(200).json({ result: completion.data.choices[0].text });
@@ -78,7 +75,7 @@ function generatePrompt(food, character, color) {
   // const capitalizedAnimal =
   //   animal[0].toUpperCase() + animal.slice(1).toLowerCase();
 
-    return `generate a username for a ${color} ${food} ${character} in random order, using synonyms, letters a-z, digits 0-9, and _:
+    return `generate a username for a ${color} ${food} ${character} in random order, replace words with synonyms and homonyms sometimes, insert words that might make sense, letters a-z, digits 0-9, and _:
     
  `
   

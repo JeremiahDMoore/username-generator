@@ -1,4 +1,5 @@
 # Username Generator
+![App Screenshot](https://github.com/JeremiahDMoore/username-generator/blob/main/D82FD81B-BB91-4B27-9A3D-F00A9000D7C4.jpeg)
 
 This project is a simple username generator application built using Next.js and the OpenAI API.
 
