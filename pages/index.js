@@ -6,6 +6,7 @@ export default function Home() {
   const [foodInput,setFoodInput] = useState("");
   const [characterInput, setCharacterInput] = useState("");
   const [colorInput, setColorInput] = useState("");
+  const [temperature, setTemperature] = useState(0.7);  // Change default slider value at app start up
 
   const [result, setResult] = useState();
 
@@ -17,7 +18,7 @@ export default function Home() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ food: foodInput, character: characterInput, color: colorInput }),
+        body: JSON.stringify({ food: foodInput, character: characterInput, color: colorInput, temperature: temperature }),  // Add temperature here
       });
 
       const data = await response.json();
@@ -69,7 +70,14 @@ export default function Home() {
             value={colorInput}
             onChange={(e) => setColorInput(e.target.value)}
           />
-         
+          <input
+            type="range"
+            min="0.6"
+            max="1"
+            step="0.05"
+            value={temperature}
+            onChange={(e) => setTemperature(e.target.value)}
+          />
           <input type="submit" value="Generate" />
         </form>
         <div className={styles.result}>{result}</div>
